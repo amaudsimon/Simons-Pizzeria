@@ -18,6 +18,10 @@
 <div class="container">
     <h1>Simon's Pizzeria</h1>
     <hr>
+    <div class="navigation">
+        <button><a href="http://localhost:63342/D287_project/src/main/resources/templates/mainscreen.html?_ijt=jon6bg8ohe38s0c90oee0l0nbn">Homepage</a></button>
+        <button><a href="http://localhost:63342/D287_project/src/main/resources/templates/About.html?_ijt=b0lp58l6dvhk2u2bhej37i6q6v">About Us</a></button>
+    </div>
     <h2>Pizza Ingredients</h2>
     <form th:action="@{/mainscreen}">
         Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
