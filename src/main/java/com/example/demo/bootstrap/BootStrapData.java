@@ -39,33 +39,57 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
-        OutsourcedPart thePart=null;
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            if(part.getName().equals("out test"))thePart=part;
-        }
 
-        System.out.println(thePart.getCompanyName());
-        */
+
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
         }
 
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
+        Part cheese = new Part("Cheese", 1.00, 10);
+        Part beef = new Part("Beef", 2.50, 10);
+        Part peperoni = new Part("Peperoni", .75, 10);
+        Part chicken = new Part("Chicken", 1.00, 10);
+        Part mixVeggies = new Part("Veggies", .75, 10);
+
+        Product cheesePizza = new Product("Cheese Pizza", 10.00, 5);
+        Product peperoniPizza = new Product("Peperoni Pizza", 10.00, 5);
+        Product beefPizza = new Product("Beef Pizza", 10.00, 5);
+        Product chickenPizza = new Product("Chicken Pizza", 10.00, 5);
+        Product veggiePizza = new Product("Veggie Pizza", 8.00, 10);
+
+        partRepository.save(cheese);
+        partRepository.save(beef);
+        partRepository.save(peperoni);
+        partRepository.save(chicken);
+        partRepository.save(mixVeggies);
+
+        productRepository.save(cheesePizza);
+        productRepository.save(peperoniPizza);
+        productRepository.save(beefPizza);
+        productRepository.save(chickenPizza);
+        productRepository.save(veggiePizza);
+
+        cheese.getProducts().add(cheesePizza);
+        cheesePizza.getParts().add(cheese);
+        beef.getProducts().add(beefPizza);
+        beefPizza.getParts().add(beef);
+        peperoni.getProducts().add(peperoniPizza);
+        peperoniPizza.getParts().add(peperoni);
+        chicken.getProducts().add(chickenPizza);
+        chickenPizza.getParts().add(chicken);
+        mixVeggies.getProducts().add(veggiePizza);
+        veggiePizza.getParts().add(mixVeggies);
+
+
+
+
+
+
+
+
+
+
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
