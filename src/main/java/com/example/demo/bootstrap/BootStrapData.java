@@ -45,41 +45,42 @@ public class BootStrapData implements CommandLineRunner {
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
         }
+        if (partRepository.count() == 0 && productRepository.count() == 0) {
+            Part cheese = new Part("Cheese", 1.00, 10);
+            Part beef = new Part("Beef", 2.50, 10);
+            Part peperoni = new Part("Peperoni", .75, 10);
+            Part chicken = new Part("Chicken", 1.00, 10);
+            Part mixVeggies = new Part("Veggies", .75, 10);
 
-        Part cheese = new Part("Cheese", 1.00, 10);
-        Part beef = new Part("Beef", 2.50, 10);
-        Part peperoni = new Part("Peperoni", .75, 10);
-        Part chicken = new Part("Chicken", 1.00, 10);
-        Part mixVeggies = new Part("Veggies", .75, 10);
+            Product cheesePizza = new Product("Cheese Pizza", 10.00, 5);
+            Product peperoniPizza = new Product("Peperoni Pizza", 10.00, 5);
+            Product beefPizza = new Product("Beef Pizza", 10.00, 5);
+            Product chickenPizza = new Product("Chicken Pizza", 10.00, 5);
+            Product veggiePizza = new Product("Veggie Pizza", 8.00, 10);
 
-        Product cheesePizza = new Product("Cheese Pizza", 10.00, 5);
-        Product peperoniPizza = new Product("Peperoni Pizza", 10.00, 5);
-        Product beefPizza = new Product("Beef Pizza", 10.00, 5);
-        Product chickenPizza = new Product("Chicken Pizza", 10.00, 5);
-        Product veggiePizza = new Product("Veggie Pizza", 8.00, 10);
+            partRepository.save(cheese);
+            partRepository.save(beef);
+            partRepository.save(peperoni);
+            partRepository.save(chicken);
+            partRepository.save(mixVeggies);
 
-        partRepository.save(cheese);
-        partRepository.save(beef);
-        partRepository.save(peperoni);
-        partRepository.save(chicken);
-        partRepository.save(mixVeggies);
+            productRepository.save(cheesePizza);
+            productRepository.save(peperoniPizza);
+            productRepository.save(beefPizza);
+            productRepository.save(chickenPizza);
+            productRepository.save(veggiePizza);
 
-        productRepository.save(cheesePizza);
-        productRepository.save(peperoniPizza);
-        productRepository.save(beefPizza);
-        productRepository.save(chickenPizza);
-        productRepository.save(veggiePizza);
-
-        cheese.getProducts().add(cheesePizza);
-        cheesePizza.getParts().add(cheese);
-        beef.getProducts().add(beefPizza);
-        beefPizza.getParts().add(beef);
-        peperoni.getProducts().add(peperoniPizza);
-        peperoniPizza.getParts().add(peperoni);
-        chicken.getProducts().add(chickenPizza);
-        chickenPizza.getParts().add(chicken);
-        mixVeggies.getProducts().add(veggiePizza);
-        veggiePizza.getParts().add(mixVeggies);
+            cheese.getProducts().add(cheesePizza);
+            cheesePizza.getParts().add(cheese);
+            beef.getProducts().add(beefPizza);
+            beefPizza.getParts().add(beef);
+            peperoni.getProducts().add(peperoniPizza);
+            peperoniPizza.getParts().add(peperoni);
+            chicken.getProducts().add(chickenPizza);
+            chickenPizza.getParts().add(chicken);
+            mixVeggies.getProducts().add(veggiePizza);
+            veggiePizza.getParts().add(mixVeggies);
+        }
 
 
 
