@@ -19,8 +19,8 @@
     <h1>Simon's Pizzeria</h1>
     <hr>
     <div class="navigation">
-        <button><a href="http://localhost:63342/D287_project/src/main/resources/templates/mainscreen.html?_ijt=jon6bg8ohe38s0c90oee0l0nbn">Homepage</a></button>
-        <button><a href="http://localhost:63342/D287_project/src/main/resources/templates/About.html?_ijt=b0lp58l6dvhk2u2bhej37i6q6v">About Us</a></button>
+        <button><a href="http://localhost:8080/mainscreen">Homepage</a></button>
+        <button><a href="http://localhost:8080/About">About Us</a></button>
     </div>
     <h2>Pizza Ingredients</h2>
     <form th:action="@{/mainscreen}">
@@ -86,10 +86,18 @@
             <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
+                <form th:action="@{/buyproduct(productID=${tempProduct.id})}" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-primary btn-sm mb-3" th:field="${tempProduct}">Buy Now</button>
+                </form>
+                <!-- Display success or failure message -->
+                <div th:if="${tempProduct.purchaseMessage}" th:text="${tempProduct.purchaseMessage}" class="alert alert-info"></div>
             </td>
         </tr>
         </tbody>
     </table>
+    <div th:if="${message}">
+        <p th:text="${message}" class="alert alert-info"></p>
+    </div>
 </div>
 </body>
 </html>
