@@ -31,6 +31,16 @@ public class Product implements Serializable {
     @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
     Set<Part> parts= new HashSet<>();
 
+    String purchaseMessage;
+
+    public String getPurchaseMessage() {
+        return purchaseMessage;
+    }
+
+    public void setPurchaseMessage(String purchaseMessage) {
+        this.purchaseMessage = purchaseMessage;
+    }
+
     public Product() {
     }
 
