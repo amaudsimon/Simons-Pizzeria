@@ -29,6 +29,17 @@ public class Part implements Serializable {
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
 
+    @Min(value = 0, message = "Maximum inventory value must be positive")
+    @Column(name = "max_inv")
+    private Integer maxInv;
+
+    @Min(value = 0, message = "Minimum inventory value must be positive")
+    @Column(name = "min_inv")
+    private Integer minInv;
+
+
+
+
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
             inverseJoinColumns=@JoinColumn(name="product_id"))
@@ -79,7 +90,11 @@ public class Part implements Serializable {
     }
 
     public void setInv(int inv) {
-        this.inv = inv;
+        if (inv >= minInv && inv <= maxInv) {
+            this.inv = inv;
+        } else {
+            throw new IllegalArgumentException("Inventory must be between " + minInv + " and " + maxInv);
+        }
     }
 
     public Set<Product> getProducts() {
@@ -92,6 +107,22 @@ public class Part implements Serializable {
 
     public String toString(){
         return this.name;
+    }
+
+    public Integer getMaxInv() {
+        return maxInv;
+    }
+
+    public void setMaxInv(Integer maxInv) {
+        this.maxInv = maxInv;
+    }
+
+    public Integer getMinInv() {
+        return minInv;
+    }
+
+    public void setMinInv(Integer minInv) {
+        this.minInv = minInv;
     }
     @Override
     public boolean equals(Object o) {
