@@ -66,4 +66,15 @@ public class ProductServiceImpl implements ProductService{
         }
         return (List<Product>) productRepository.findAll();
     }
+    public void validateProductInventory(Product theProduct) {
+        for (Part part : theProduct.getParts()) {
+            validatePartInventory(part);
+        }
+    }
+
+    private void validatePartInventory(Part part) {
+        if (part.getInv() < part.getMinInv()) {
+            throw new IllegalArgumentException("Low inventory for part: " + part.getName());
+        }
+    }
 }
