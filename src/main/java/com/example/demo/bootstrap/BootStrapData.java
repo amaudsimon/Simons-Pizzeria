@@ -47,10 +47,20 @@ public class BootStrapData implements CommandLineRunner {
         }
         if (partRepository.count() == 0 && productRepository.count() == 0) {
             Part cheese = new Part("Cheese", 1.00, 10);
+            cheese.setMinInv(2);
+            cheese.setMaxInv(20);
             Part beef = new Part("Beef", 2.50, 10);
+            beef.setMinInv(2);
+            beef.setMaxInv(20);
             Part peperoni = new Part("Peperoni", .75, 10);
+            peperoni.setMinInv(2);
+            peperoni.setMaxInv(20);
             Part chicken = new Part("Chicken", 1.00, 10);
+            chicken.setMinInv(2);
+            chicken.setMaxInv(20);
             Part mixVeggies = new Part("Veggies", .75, 10);
+            mixVeggies.setMinInv(2);
+            mixVeggies.setMaxInv(20);
 
             Product cheesePizza = new Product("Cheese Pizza", 10.00, 5);
             Product peperoniPizza = new Product("Peperoni Pizza", 10.00, 5);
