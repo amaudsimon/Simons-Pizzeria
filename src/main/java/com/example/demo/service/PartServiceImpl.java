@@ -65,4 +65,18 @@ public class PartServiceImpl implements PartService{
         Long theIdl=(long)theId;
         partRepository.deleteById(theIdl);
     }
+
+    private void validatePart(Part thePart) {
+        int inv = thePart.getInv();
+        int minInv = thePart.getMinInv();
+        int maxInv = thePart.getMaxInv();
+
+        if (inv < minInv) {
+            throw new IllegalArgumentException("Low inventory: The inventory cannot be less than the minimum inventory");
+        }
+
+        if (inv > maxInv) {
+            throw new IllegalArgumentException("High inventory: The inventory cannot be greater than the maximum inventory");
+        }
+    }
 }
