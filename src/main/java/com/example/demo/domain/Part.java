@@ -4,30 +4,26 @@ import com.example.demo.validators.ValidDeletePart;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
-/**
- *
- *
- *
- *
- */
 @Entity
 @ValidDeletePart
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
-@Table(name="Parts")
+@DiscriminatorColumn(name = "part_type", discriminatorType = DiscriminatorType.INTEGER)
+@Table(name = "Parts")
 public class Part implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
+
     String name;
+
     @Min(value = 0, message = "Price value must be positive")
     double price;
+
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
 
@@ -39,13 +35,13 @@ public class Part implements Serializable {
     @Column(name = "min_inv")
     private Integer minInv;
 
-
-
-
     @ManyToMany
-    @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
-            inverseJoinColumns=@JoinColumn(name="product_id"))
-    Set<Product> products= new HashSet<>();
+    @JoinTable(
+            name = "product_part",
+            joinColumns = @JoinColumn(name = "part_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    Set<Product> products = new HashSet<>();
 
     public Part() {
     }
@@ -107,7 +103,7 @@ public class Part implements Serializable {
         this.products = products;
     }
 
-    public String toString(){
+    public String toString() {
         return this.name;
     }
 
@@ -126,6 +122,7 @@ public class Part implements Serializable {
     public void setMinInv(Integer minInv) {
         this.minInv = minInv;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
