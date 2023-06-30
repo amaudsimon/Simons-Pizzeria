@@ -16,6 +16,11 @@ public class InhousePart extends Part{
 
     public InhousePart() {
     }
+    public InhousePart(String name, double price, int inv) {
+        this.name = name;
+        this.price = price;
+        this.inv = inv;
+    }
 
     public int getPartId() {
         return partId;
