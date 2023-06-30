@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -52,21 +54,28 @@ public class AddProductController {
     public String submitForm(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model theModel) {
         theModel.addAttribute("product", product);
 
-        if(bindingResult.hasErrors()){
-            ProductService productService = context.getBean(ProductServiceImpl.class);
-            Product product2=productService.findById((int)product.getId());
+        if (bindingResult.hasErrors()) {
+            // Add code to handle validation errors
             theModel.addAttribute("parts", partService.findAll());
-            List<Part>availParts=new ArrayList<>();
-            for(Part p: partService.findAll()){
-                if(!product2.getParts().contains(p))availParts.add(p);
+            List<Part> availParts = new ArrayList<>();
+            for (Part p : partService.findAll()) {
+                if (!product.getParts().contains(p)) {
+                    availParts.add(p);
+                }
             }
-            theModel.addAttribute("availparts",availParts);
-            theModel.addAttribute("assparts",product2.getParts());
+            theModel.addAttribute("availparts", availParts);
+            theModel.addAttribute("assparts", product.getParts());
+
+            // Display error messages
+            for (ObjectError error : bindingResult.getAllErrors()) {
+                if (error instanceof FieldError) {
+                    FieldError fieldError = (FieldError) error;
+                    theModel.addAttribute(fieldError.getField() + "Error", fieldError.getDefaultMessage());
+                }
+            }
+
             return "productForm";
         }
- //       theModel.addAttribute("assparts", assparts);
- //       this.product=product;
-//        product.getParts().addAll(assparts);
         else {
             ProductService repo = context.getBean(ProductServiceImpl.class);
             if(product.getId()!=0) {
