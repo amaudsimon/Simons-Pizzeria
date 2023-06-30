@@ -1,0 +1,273 @@
+commit 53bb18e742c7588599812668c67a5fb78e55931d
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:23:17 2023 -0500
+
+    Created README file with required notes
+
+commit 0523ec550f393a0ac45b0f1099c59c9b83f41c0d
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:15:12 2023 -0500
+
+    Updated code to handle error and validation
+
+commit 60fda9f523a5fff2a3d4324c7e658d66746c6264
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:13:42 2023 -0500
+
+    Made code more readable
+
+commit 0885a5544a4f1ea68ebc1fd9fbe3c8677d10aa04
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:12:37 2023 -0500
+
+    Made code more readable
+
+commit 13224cc7fad3b96763a787454718675fc49520ae
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:11:57 2023 -0500
+
+    imported validation contraints
+
+commit 51b9debbb45b1817b34676640a6488813a22eacf
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:11:03 2023 -0500
+
+    Added not null annotation
+
+commit d0b318e738beb043632ce0153b862dcd564a253a
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:10:05 2023 -0500
+
+    Updated code to handle validation errors
+
+commit a7cbc8e62e00330f81323c67a25cb8f8c3b08018
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:07:35 2023 -0500
+
+    Added space to Java code to make it more readable
+
+commit eddc4d81e28bfbb9e914e2d58b773aefeb32d078
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 16:06:37 2023 -0500
+
+    Added space to Java code to make it more readable
+
+commit 630f8cfc3dcda940f4435989e9d070eecb9f5427
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 09:34:40 2023 -0500
+
+    InhousePart.java        19-23   Add InhousePart Constructor
+
+commit e0e42648feb06b022551825adc18b24701e44ac9
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 09:34:15 2023 -0500
+
+    OutsourcedPart.java     19-23   Add OutsourcedPart Constructor
+
+commit 9cab217768b73f433cc9e5fc1452189e6d567e9a
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 09:33:46 2023 -0500
+
+    BootStrapData.java      45 & 50 Add company name to Outsourced parts
+
+commit bf21a679ab820333ce6294d1c3834fe06847c344
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Fri Jun 30 08:42:17 2023 -0500
+
+    PartTest.Java   159-193 Add two unit tests for the maximum and minimum fields
+
+commit b89e82d6c907d3d2b668f4bee46c1c5d0cfa89ac
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 21:55:44 2023 -0500
+
+    Added spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+
+commit e9ae342d6282dc56974820d0994823a084910a2c
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 21:18:21 2023 -0500
+
+    AboutController.java Created Controller for About page
+
+commit 13260211bb1897668142dfbfb3aec81ca8842b6e
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 21:16:34 2023 -0500
+
+    About.html      11-12   Updated navigation bar links
+
+commit 6e101c13f7ec8a9ab36545b6af0589c7bde5f04e
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 14:36:45 2023 -0500
+
+    PartServiceImpl.java    69-81   Added validation logic
+
+commit 95c2087d09e1b1f94b4280cdd8f93fcec95bcbea
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 14:36:30 2023 -0500
+
+    ProductService.java     20      Added two methods to perform validation for adding or updating products
+
+commit e70490b11d4e0a4f482f092dfd7e606ebb6dbdf0
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 14:36:15 2023 -0500
+
+    PartServiceImpl.java    69-81   Added validation logic
+
+commit ea55f9050af831c4647ccdca60d5444f156a44cb
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 14:35:56 2023 -0500
+
+    PartService.java        17      Added the throws illegal argument exception clause to indicate the method may throw an exception if the validation fails
+
+commit 8823309d8345e2e467eb0647f8f3b19cac483bc3
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 14:23:40 2023 -0500
+
+    OutsourcedPartForm.html 27-31   Add code to display error message for maximum and minimum inventory fields
+
+commit 04e88cd830677a7c67c9ea4b00af34cabc711d90
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 14:23:23 2023 -0500
+
+    InhousePartForm.html    25-29   Add code to display error message for maximum and minimum inventory fields
+
+commit e62f15f9db1e3e2050f4a64849ab9a0332349d60
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 13:32:17 2023 -0500
+
+    Part.java       10-11   Add validation annotations
+
+commit 2ea8ee8f0bd27bc3ae9537616f754677d5d1061a
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 13:05:13 2023 -0500
+
+    application.properties  6       Rename storage file
+
+commit 99c2b236c2214a84baf1a753174ee40c597b9df8
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 13:03:21 2023 -0500
+
+    BootStrapData.java      50-63   Update the sample inventory data to include the values for the maxInv and minInv fields
+
+commit e9d48316aef651db2028f13076b56344a967c8d6
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 13:00:49 2023 -0500
+
+    InhousePartForm.html    25-30   Add additional text inputs for maximum and minimum inventory
+
+commit ec1d6f82c8248f31855582e8d66f5428c45f79d1
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 13:00:17 2023 -0500
+
+    OutsourcedPartForm.html 27-31   Add additional text inputs for maximum and minimum inventory
+
+commit 9910dd1aa2c8a8073d7599cf370c428bd19f282e
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Thu Jun 29 12:57:16 2023 -0500
+
+    Part.java       31-41   Added fields for maximum and minimum inventory
+    Part.java       92-98 &         Update the setInv() method to include validation for the inventory value
+    Part.java       111-126 Generate getter and setters for maxIn and minInv fields
+
+commit 771d9d72f07a074cba05a4bd2b8a580e54122cd5
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Wed Jun 28 16:50:26 2023 -0500
+
+    Updated if statement
+
+commit b96b021b87c119aaa3eb959736feaadf271a1b71
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Wed Jun 28 16:49:36 2023 -0500
+
+    Product.java    34-42   Create a purchase message method
+
+commit d4e72d20d6a3cb77e940332c607bec7338988ab7
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Wed Jun 28 16:46:15 2023 -0500
+
+    MainScreenControllerr.java      59-74   Added new method to handle the purchase of a product
+
+commit 05d29a8ad31d2366922b2b4680621e48b97a3b62
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Wed Jun 28 16:43:53 2023 -0500
+
+    mainscreen.html 86-93 & 98-100  Added ‘Buy Now’ button with message of successful/fail purchase
+
+commit 40b3a1ee4aecc579c6f40948cfd19cd7d5cde387
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Wed Jun 28 11:14:51 2023 -0500
+
+    Part.java       22      Removed abstract property from Part Class
+
+commit 456b8cb87005a69de510f1506ceadc12844ea7c1
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Wed Jun 28 11:13:00 2023 -0500
+
+    BootStrapData.java      49-53   Added sample inventory for parts
+    BootStrapData.java      55-59   Added sample inventory for products
+    BootStrapData.java      61-71   Saved parts and products to their respective repositories
+
+commit 82492db49f09563fc0dfb8db5ce6b4515bc193e8
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Tue Jun 27 07:07:18 2023 -0500
+
+    Added navigation bar on line 21
+
+commit e359b631e4c6d7347290693867366d3542da4b65
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Tue Jun 27 07:06:40 2023 -0500
+
+    Add "About page" and added navigaation bar
+
+commit cd94be55051f3019ced38b152b5b10d2f3555e32
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Sat Jun 24 08:58:45 2023 -0500
+
+    productForm.html        12      Change “Product Detail” to “Hot and Ready Pizzas”
+
+commit 3a05cdb0200e6088a4576bc3d7e0361952f86ee5
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Sat Jun 24 08:58:23 2023 -0500
+
+    OutsourcedPartForm.html 10      Change “Outsourced Part Detail” to “Outsourced Ingredients”
+
+commit df3aa45a3a76fe8389ba6d77f8d274d0dd88962d
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Sat Jun 24 08:57:54 2023 -0500
+
+    InHousePartForm.html    10      Change “In house Part Detail” to “Homemade Ingredients”
+
+commit 3aa673f6b5271ea753796013a784a02990c8160f
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Sat Jun 24 08:56:06 2023 -0500
+
+    Mainscreen.html 14      Change “My bike shop” to “My Pizzeria
+    Mainscreen.html 19      Change “shop” to “Simon’s Pizzeria”
+    Mainscreen.html 21      Change “Parts” to “Pizza Ingredients”
+    Mainscreen.html 53      “Change “Products” to “Pizzas”
+
+commit aa303e91885ccfc994ebfdffb39e687992ee9ee7
+Author: Amaud Simon <asimo29@wgu.edu>
+Date:   Sat Jun 24 08:51:27 2023 -0500
+
+    Mainscreen.html 14      Change “My bike shop” to “My Pizzeria
+    Mainscreen.html 19      Change “shop” to “Simon’s Pizzeria”
+    Mainscreen.html 21      Change “Parts” to “Pizza Ingredients”
+    Mainscreen.html 53      “Change “Products” to “Pizzas”
+
+commit 3fdf7d2fe775e4046d2c99c094281d95c2fe0ed1
+Author: Zohar Sajith <zohar.sajith@cdw.com>
+Date:   Mon Feb 27 18:09:13 2023 +0000
+
+    Added Branching instructions to README
+
+commit affdd23c3819e75dd98f87e66da8ca6c113dd298
+Author: matt.alexander <matt.alexander@wgu.edu>
+Date:   Thu Feb 16 16:44:55 2023 -0500
+
+    Upload base project
+
+commit 39900dde284c2f532c35e98bdf1ab07661bcba23
+Author: Emilio Miller <emilio.miller@siriusfederal.com>
+Date:   Thu Feb 16 21:41:34 2023 +0000
+
+    Upload README
