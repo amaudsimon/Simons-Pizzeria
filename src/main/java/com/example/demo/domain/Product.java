@@ -4,7 +4,9 @@ import com.example.demo.validators.ValidEnufParts;
 import com.example.demo.validators.ValidProductPrice;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,12 +26,17 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
     String name;
+
     @Min(value = 0, message = "Price value must be positive")
     double price;
+
     @Min(value = 0, message = "Inventory value must be positive")
+    @Max(value = 100, message = "Inventory must be less than or equal to 100")
+    @NotNull(message = "Inventory is required")
     int inv;
+
     @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
-    Set<Part> parts= new HashSet<>();
+    Set<Part> parts = new HashSet<>();
 
     String purchaseMessage;
 
